@@ -1,20 +1,20 @@
 // 模块数据存储
-// 优先使用默认数据，而不是localStorage中的数据
-let modules = JSON.parse(localStorage.getItem('modules')) || [
+// 只使用script.js中的默认数据，不依赖localStorage
+let modules = [
     {
         "id": 1,
         "name": "Img Upscaler",
         "image": "images/Img Upscaler.jpg",
         "link": "https://imgupscaler.ai/zh/",
-        "guide": "#",
+        "guide": "suomin/Img Upscaler.html",
         "description": "无需登入-免费放大"
     },
     {
         "id": 2,
-        "name": "哈哈魔法人偶",
+        "name": "魔法人偶",
         "image": "images/魔法人偶.jpg",
         "link": "https://www.anyposes.com/",
-        "guide": "#",
+        "guide": "suomin/魔法人偶.html",
         "description": "摆放动作用于Ai生图参考"
     },
     {
@@ -23,7 +23,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "Ai重绘放大",
         "image": "images/Krea.jpg",
         "link": "https://www.krea.ai/enhancer",
-        "guide": "https://www.krea.ai/enhancer"
+        "guide": "suomin/Krea.html"
     },
     {
         "id": 1773803119578,
@@ -31,7 +31,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "根据参考做出相同的动作",
         "image": "images/动作迁移.jpg",
         "link": "https://huggingface.co/spaces/linoyts/Qwen-Image-Edit-2511-AnyPose",
-        "guide": "1"
+        "guide": "suomin/动作迁移.html"
     },
     {
         "id": 1773803156434,
@@ -39,7 +39,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "复刻图片的光影效果",
         "image": "images/光影迁移.jpg",
         "link": "https://huggingface.co/spaces/multimodalart/Qwen-Image-Light-Migration",
-        "guide": "https://huggingface.co/spaces/multimodalart/Qwen-Image-Light-Migration"
+        "guide": "suomin/光影迁移.html"
     },
     {
         "id": 1773803172005,
@@ -47,7 +47,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "图片生成其它9个角度",
         "image": "images/多角度生成.jpg",
         "link": "https://www.liblib.art/modelinfo/236a739d12ab4b4783201e55369d8413?from=search&versionUuid=9b2dd06aefd44ae9bc6309a07625cf57",
-        "guide": "https://www.liblib.art/modelinfo/236a739d12ab4b4783201e55369d8413?from=search&versionUuid=9b2dd06aefd44ae9bc6309a07625cf57"
+        "guide": "suomin/多角度生成.html"
     },
     {
         "id": 1773806351383,
@@ -55,7 +55,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "上传白底自动生成类似效果",
         "image": "images/玻璃柜烟雾机械手.jpg",
         "link": "https://www.liblib.art/modelinfo/538acb0d9659465e88b645934a912912?versionUuid=fdc1d9f7a8764092acf5c1edf8d5d6e3",
-        "guide": "https://www.liblib.art/modelinfo/538acb0d9659465e88b645934a912912?versionUuid=fdc1d9f7a8764092acf5c1edf8d5d6e3"
+        "guide": "suomin/玻璃柜烟雾机械手.html"
     },
     {
         "id": 1773806373427,
@@ -63,7 +63,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "上传白底生成类似效果",
         "image": "images/冲水效果.jpg",
         "link": "https://www.liblib.art/modelinfo/2af8b8560e7e4c60acfa186999fe6966?from=feed&versionUuid=b394bab1a40a41dfa5cc2caeeb7d3053&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4",
-        "guide": "https://www.liblib.art/modelinfo/2af8b8560e7e4c60acfa186999fe6966?from=feed&versionUuid=b394bab1a40a41dfa5cc2caeeb7d3053&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4"
+        "guide": "suomin/冲水效果.html"
     },
     {
         "id": 1773806424001,
@@ -71,7 +71,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "自动生成透明内部结构",
         "image": "images/内部结构特效.jpg",
         "link": "https://www.liblib.art/modelinfo/502fbac3644842d7838d69851f51a149?from=feed&versionUuid=40be741705d1420fa13385e9dbf0751e&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4",
-        "guide": "https://www.liblib.art/modelinfo/502fbac3644842d7838d69851f51a149?from=feed&versionUuid=40be741705d1420fa13385e9dbf0751e&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4"
+        "guide": "suomin/内部结构特效.html"
     },
     {
         "id": 1773806468148,
@@ -79,7 +79,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "图片自动拆分带图层源文件",
         "image": "images/逆向PSD.jpg",
         "link": "https://huggingface.co/spaces/Qwen/Qwen-Image-Layered",
-        "guide": "https://huggingface.co/spaces/Qwen/Qwen-Image-Layered"
+        "guide": "suomin/逆向PSD.html"
     },
     {
         "id": 1773812038392,
@@ -87,7 +87,7 @@ let modules = JSON.parse(localStorage.getItem('modules')) || [
         "description": "白底图生成类似效果",
         "image": "images/烟雾照明效果.jpg",
         "link": "https://www.liblib.art/modelinfo/c1b07e74f98d430584acac7d4618f21a?from=feed&versionUuid=315d6a352ca542a194ec6116a0a18f21&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4",
-        "guide": "https://www.liblib.art/modelinfo/c1b07e74f98d430584acac7d4618f21a?from=feed&versionUuid=315d6a352ca542a194ec6116a0a18f21&rankExpId=RVIyX0wyI0VHMTEjRTE3X0wzI0VHMjUjRTM4"
+        "guide": "suomin/烟雾照明效果.html"
     }
 ];
 
@@ -122,7 +122,7 @@ function renderModules() {
             <img src="${module.image}" alt="${module.name}" class="module-image">
             <div class="module-buttons">
                 <a href="${module.link}" target="_blank" class="btn btn-primary">跳转连接</a>
-                <a href="${module.guide}" target="_blank" class="btn btn-secondary">使用说明</a>
+                <button class="btn btn-secondary" onclick="showGuide('${module.name}', '${module.guide}')">使用说明</button>
             </div>
         `;
         container.appendChild(moduleElement);
@@ -218,7 +218,6 @@ function editModule(moduleId) {
         document.getElementById('module-name').value = module.name;
         document.getElementById('module-description').value = module.description || '';
         document.getElementById('module-link').value = module.link;
-        document.getElementById('module-guide').value = module.guide;
         
         // 保存模块ID到表单
         document.getElementById('add-module-modal').dataset.moduleId = moduleId;
@@ -347,6 +346,11 @@ function setupEventListeners() {
             document.getElementById('password-input').value = '';
         }
     });
+    
+    // 使用说明对话框关闭按钮
+    document.getElementById('guide-close').addEventListener('click', () => {
+        document.getElementById('guide-modal').style.display = 'none';
+    });
 }
 
 // 重置新建模块表单
@@ -354,7 +358,6 @@ function resetAddModuleForm() {
     document.getElementById('module-name').value = '';
     document.getElementById('module-description').value = '';
     document.getElementById('module-link').value = '';
-    document.getElementById('module-guide').value = '';
 }
 
 // 新增或编辑模块
@@ -362,17 +365,19 @@ function addModule() {
     const name = document.getElementById('module-name').value;
     const description = document.getElementById('module-description').value;
     const link = document.getElementById('module-link').value;
-    const guide = document.getElementById('module-guide').value;
     const addModuleModal = document.getElementById('add-module-modal');
     const moduleId = addModuleModal.dataset.moduleId;
     
-    if (!name || !link || !guide) {
+    if (!name || !link) {
         alert('请填写所有必填字段');
         return;
     }
     
     // 生成图片路径，使用模块名称作为文件名
     const imageUrl = 'images/' + name + '.jpg';
+    
+    // 生成使用说明链接，指向suomin文件夹中对应模块名称的html文件
+    const guideUrl = 'suomin/' + name + '.html';
     
     if (moduleId) {
         // 编辑现有模块
@@ -384,7 +389,7 @@ function addModule() {
                 description: description,
                 image: imageUrl,
                 link: link,
-                guide: guide
+                guide: guideUrl
             };
         }
     } else {
@@ -395,7 +400,7 @@ function addModule() {
             description: description,
             image: imageUrl,
             link: link,
-            guide: guide
+            guide: guideUrl
         };
         
         // 添加到模块列表
@@ -412,6 +417,27 @@ function addModule() {
     // 重置表单数据属性和按钮文本
     delete addModuleModal.dataset.moduleId;
     document.getElementById('add-module-submit').textContent = '完成';
+}
+
+// 显示使用说明
+function showGuide(moduleName, guideUrl) {
+    const guideModal = document.getElementById('guide-modal');
+    const guideTitle = document.getElementById('guide-title');
+    const guideContent = document.getElementById('guide-content');
+    
+    if (guideModal && guideTitle && guideContent) {
+        guideTitle.textContent = `${moduleName} - 使用说明`;
+        
+        if (guideUrl && guideUrl !== '#') {
+            // 直接尝试加载文件，不进行存在性检查（本地文件系统中XMLHttpRequest可能不可靠）
+            guideContent.innerHTML = `<iframe src="${guideUrl}" onload="this.style.display='block'" onerror="this.parentElement.textContent='待补充，请稍后查看'" style="display:none;"></iframe>`;
+        } else {
+            // 如果没有使用说明链接，显示提示信息
+            guideContent.textContent = '待补充，请稍后查看';
+        }
+        
+        guideModal.style.display = 'block';
+    }
 }
 
 // 全局函数，用于显示访问密码弹窗

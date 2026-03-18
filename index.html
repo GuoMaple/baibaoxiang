@@ -62,9 +62,17 @@
             <input type="text" id="module-name" placeholder="模块名称">
             <input type="text" id="module-description" placeholder="模块描述">
             <input type="url" id="module-link" placeholder="跳转连接">
-            <input type="url" id="module-guide" placeholder="使用说明连接">
             <button id="add-module-submit">完成</button>
             <button id="add-module-cancel">取消</button>
+        </div>
+    </div>
+
+    <!-- 使用说明对话框 -->
+    <div class="modal" id="guide-modal">
+        <div class="modal-content">
+            <h2 id="guide-title">使用说明</h2>
+            <div id="guide-content"></div>
+            <button id="guide-close">关闭</button>
         </div>
     </div>
 
