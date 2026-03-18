@@ -275,11 +275,10 @@ function setupEventListeners() {
     // 新建模块提交按钮
     document.getElementById('add-module-submit').addEventListener('click', addModule);
     
-    // 点击模态框外部关闭
+    // 点击模态框外部关闭（仅适用于访问和密码模态框）
     window.addEventListener('click', (e) => {
         const accessModal = document.getElementById('access-modal');
         const passwordModal = document.getElementById('password-modal');
-        const addModuleModal = document.getElementById('add-module-modal');
         
         if (e.target === accessModal) {
             accessModal.style.display = 'none';
@@ -288,11 +287,6 @@ function setupEventListeners() {
         if (e.target === passwordModal) {
             passwordModal.style.display = 'none';
             document.getElementById('password-input').value = '';
-        }
-        
-        if (e.target === addModuleModal) {
-            addModuleModal.style.display = 'none';
-            resetAddModuleForm();
         }
     });
 }
