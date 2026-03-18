@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>场景设计部Ai魔盒</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 封面页面 -->
+    <div class="cover" id="cover">
+        <img src="images/FM.jpg" alt="封面" class="cover-image">
+        <button class="enter-btn" id="enter-btn" onclick="showAccessModal()">进入</button>
+    </div>
+
+    <!-- 访问密码弹窗 -->
+    <div class="modal" id="access-modal">
+        <div class="modal-content">
+            <h2>访问验证</h2>
+            <input type="password" id="access-password" placeholder="请输入访问密码">
+            <button id="access-submit">确认</button>
+        </div>
+    </div>
+
+    <div class="container" id="main-content">
+        <header>
+            <img src="images/BT.png" alt="场景设计部Ai魔盒" class="header-logo">
+            <p class="header-note">部分链接需要科学上网</p>
+        </header>
+        <main>
+            <div class="modules" id="modules-container">
+                <!-- 模块将通过JavaScript动态生成 -->
+            </div>
+        </main>
+        <button class="admin-btn" id="admin-btn">管理员模式</button>
+    </div>
+
+    <!-- 管理员密码对话框 -->
+    <div class="modal" id="password-modal">
+        <div class="modal-content">
+            <h2>管理员模式</h2>
+            <input type="password" id="password-input" placeholder="请输入密码">
+            <button id="password-submit">确认</button>
+            <button id="password-cancel">取消</button>
+        </div>
+    </div>
+
+    <!-- 管理员操作选择窗口 -->
+    <div class="modal" id="admin-actions-modal">
+        <div class="modal-content">
+            <h2>管理员操作</h2>
+            <button id="admin-action-add">新建模块</button>
+            <button id="admin-action-edit">编辑模块</button>
+            <button id="admin-action-cancel">取消</button>
+        </div>
+    </div>
+
+    <!-- 新建模块对话框 -->
+    <div class="modal" id="add-module-modal">
+        <div class="modal-content">
+            <h2>新建模块</h2>
+            <input type="text" id="module-name" placeholder="模块名称">
+            <input type="text" id="module-description" placeholder="模块描述">
+            <input type="url" id="module-link" placeholder="跳转连接">
+            <input type="url" id="module-guide" placeholder="使用说明连接">
+            <button id="add-module-submit">完成</button>
+            <button id="add-module-cancel">取消</button>
+        </div>
+    </div>
+
+    <script>
+        // 全局函数，用于显示访问密码弹窗
+        function showAccessModal() {
+            console.log('showAccessModal called!');
+            const accessModal = document.getElementById('access-modal');
+            if (accessModal) {
+                accessModal.style.display = 'block';
+                console.log('Access modal displayed');
+                // 添加延迟确保输入框在模态框完全显示后再聚焦
+                setTimeout(() => {
+                    const passwordInput = document.getElementById('access-password');
+                    if (passwordInput) {
+                        passwordInput.focus();
+                        console.log('Password input focused');
+                    }
+                }, 100);
+            } else {
+                console.error('Access modal not found!');
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
